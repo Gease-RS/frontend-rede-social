@@ -1,4 +1,4 @@
-# frontend-rede-social
+# Frontend-rede-social
 
 Front-end para o repositório FullStack-Node-React-Firebase, baseando na vídeo aula da freeCodeCamp.org
 
@@ -14,3 +14,5 @@ Front-end para o repositório FullStack-Node-React-Firebase, baseando na vídeo 
 
 `npm start`
 
+# Pacotes
+`npm install --save react-router-dom `
