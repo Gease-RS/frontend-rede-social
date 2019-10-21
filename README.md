@@ -24,6 +24,9 @@ utilizando o npm
 
 `npm install @material-ui/icons`
 
+`npm install axios`
+
+`npm install dayjs`
 
 utilizando o yarn
 
@@ -32,3 +35,7 @@ utilizando o yarn
 `yarn add @material-ui/core`
 
 `yarn add @material-ui/icons`
+
+`yarn add axios`
+
+`yarn add dayjs`
