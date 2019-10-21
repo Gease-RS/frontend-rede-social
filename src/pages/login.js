@@ -64,14 +64,15 @@ class login extends Component {
     }
     axios
       .post('/login', userData)
-      .then(res => {
+      .then((res) => {
         console.log(res.data);
+        localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
         this.setState({
           loading: false
         });
         this.props.history.push('/');
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           errors: err.response.data,
           loading: false
@@ -140,7 +141,7 @@ class login extends Component {
             </Button>
             <br />
             <small>
-              dont have ab account? sign up <Link to="/signup">here</Link>
+              dont have an account? sign up <Link to="/signup">here</Link>
             </small>
           </form>
         </Grid>

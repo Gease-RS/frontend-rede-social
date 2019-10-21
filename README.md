@@ -16,7 +16,7 @@ Front-end para o repositório FullStack-Node-React-Firebase, baseando na vídeo 
 
 # Pacotes
 
-utilizando o npm
+### utilizando o npm
 
 `npm install --save react-router-dom `
 
@@ -28,7 +28,9 @@ utilizando o npm
 
 `npm install dayjs`
 
-utilizando o yarn
+`npm install --save jwt-decode`
+
+### utilizando o yarn
 
 `yarn add react-router-dom `
 
@@ -39,3 +41,5 @@ utilizando o yarn
 `yarn add axios`
 
 `yarn add dayjs`
+
+`yarn add jwt-decode`
