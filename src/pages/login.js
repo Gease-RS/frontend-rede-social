@@ -15,9 +15,30 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/userActions';
 
-const styles = (theme) => ({
-  ...theme.forms
-})
+const styles = {
+  form: {
+    textAlign: "center"
+  },
+  image: {
+    maxWidth: 150,
+    margin: "20px auto"
+  },
+  button: {
+    margin: "20px auto",
+    position: "relative",
+  },
+  progress:{
+    position: "absolute"
+  },
+  textField: {
+    margin: "10px auto"
+  },
+  customError: {
+    color: 'red',
+    fontSize: "0.8rem"
+  }
+}
+
 
 class login extends Component {
   constructor(props) {
@@ -38,6 +59,7 @@ class login extends Component {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
+
   handleSubmit (event) {
     event.preventDefault();
     const userData = {
@@ -54,11 +76,13 @@ class login extends Component {
   };
 
   render() {
-    const { classes, UI: { loading } } = this.props;
+    const { 
+      classes, UI: { loading } 
+    } = this.props;
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
+      <Grid container className={classes.forms}>
         <Grid item sm />
         <Grid item sm>
           <img src={AppIcon} alt="Log" className={classes.image}/>

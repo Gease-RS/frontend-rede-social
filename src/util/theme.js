@@ -1,5 +1,5 @@
-export default {
-    palette: {
+export const muiStyles = ({
+	palette: {
 		primary: {
 			light: "#9effe3",
 			main: "#6adaba",
@@ -39,4 +39,6 @@ export default {
 			fontSize: "0.8rem"
 		}
 	}
-}
+  });
+
+  
