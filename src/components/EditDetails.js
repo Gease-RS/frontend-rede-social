@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from'@material-ui/core/styles/withStyles';
 import { connect } from 'react-redux';
 import { editUserDetails } from '../redux/actions/userActions';
+import MyButton from '../util/MyButton';
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -10,8 +11,6 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 
 const styles = (theme) => ({
@@ -79,67 +78,69 @@ class EditDetails extends Component {
       const { classes } = this.props;
     return (
       <Fragment>
-          <Tooltip title="Edit details" placement="top">
-              <IconButton onClick={this.handleOpen} className={classes.button}>
-                  <EditIcon color="primary"/>
-              </IconButton>
-          </Tooltip>
-
+          <MyButton 
+            tip="Edit Details" 
+            onClick={this.handleOpen} 
+            btnClassName={classes.button}
+           >
+            <EditIcon color="primary" />
+          </MyButton>
           <Dialog  
-           open={this.state.open}
-           onClose={this.handleClose}
-           fullWidth
-           maxWidth="sm">
-               <DialogTitle>Edit you Details</DialogTitle>
-               <DialogContent>
-                   <form>
-                       <TextField
-                         name="bio"
-                         type="text"
-                         label="Bio"
-                         multiline
-                         rows="3"
-                         placeholder="A shotr bio about yourself"
-                         className={classes.textField}
-                         value={this.state.bio}
-                         onChange={this.handleChange}
-                         fullWidth
-                       />
-                       <TextField
-                         name="website"
-                         type="text"
-                         label="website"
-                         multiline
-                         rows="3"
-                         placeholder="Your personal/profissional website"
-                         className={classes.textField}
-                         value={this.state.website}
-                         onChange={this.handleChange}
-                         fullWidth
-                       />
-                       <TextField
-                         name="location"
-                         type="text"
-                         label="location"
-                         multiline
-                         rows="3"
-                         placeholder="Where you live"
-                         className={classes.textField}
-                         value={this.state.location}
-                         onChange={this.handleChange}
-                         fullWidth
-                       />
-                   </form>
-               </DialogContent>
-               <DialogActions>
-                   <Button onClick={this.handleClose} color="secondary">
-                       Cancel{' '}
-                   </Button>
-                   <Button onClick={this.handleSubmit} color="primary">
-                       Salve{' '}
-                   </Button>
-               </DialogActions>
-           </Dialog>
+            open={this.state.open}
+            onClose={this.handleClose}
+            fullWidth
+            maxWidth="sm"
+          >
+            <DialogTitle>Edit you Details</DialogTitle>
+            <DialogContent>
+              <form>
+                <TextField
+                  name="bio"
+                  type="text"
+                  label="Bio"
+                  multiline
+                  rows="3"
+                  placeholder="A shotr bio about yourself"
+                  className={classes.textField}
+                  value={this.state.bio}
+                  onChange={this.handleChange}
+                  fullWidth
+                />
+                <TextField
+                  name="website"
+                  type="text"
+                  label="website"
+                  multiline
+                  rows="3"
+                  placeholder="Your personal/profissional website"
+                  className={classes.textField}
+                  value={this.state.website}
+                  onChange={this.handleChange}
+                  fullWidth
+                />
+                <TextField
+                  name="location"
+                  type="text"
+                  label="location"
+                  multiline
+                  rows="3"
+                  placeholder="Where you live"
+                  className={classes.textField}
+                  value={this.state.location}
+                  onChange={this.handleChange}
+                  fullWidth
+                />
+              </form>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleClose} color="secondary">
+                Cancel{' '}
+              </Button>
+              <Button onClick={this.handleSubmit} color="primary">
+                Salve{' '}
+              </Button>
+            </DialogActions>
+          </Dialog>
       </Fragment>
     );
   }
