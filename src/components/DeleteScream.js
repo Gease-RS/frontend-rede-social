@@ -26,24 +26,24 @@ class DeleteScream extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          open: false
-        };
+            open: false
+        }; 
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
         
-    }
-      
+      }
+    
     handleOpen() {
          this.setState({ open: true });
     }
-
     handleClose() {
         this.setState({ open: false});
     }
     deleteScream = () => {
         this.props.deleteScream(this.props.screamId);
-        this.setState({ open: false})
+        this.setState({ open: false});
     }
   render() {
-
       const { classes } = this.props;
     return (
       <Fragment>

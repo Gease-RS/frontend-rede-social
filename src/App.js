@@ -15,14 +15,14 @@ import { logoutUser, getUserData } from './redux/actions/userActions';
 // Components
 import Navbar from './components/Navbar';
 import AuthRoute from './util/AuthRoute';
-import { muiStyles } from "./util/theme";
+import themeObject from "./util/theme";
 
 //Pages
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
 
-const theme = createMuiTheme({ ...muiStyles });
+const theme = createMuiTheme(themeObject);
 
 const token = localStorage.FBIdToken;
 if (token) {
